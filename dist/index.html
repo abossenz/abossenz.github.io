@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>fotografie.bossenz.ch</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">📸 ‼️ 🔴 🟣 🏳️‍🌈 🟥 🤪 😵‍💫</text></svg>'>
+    
+    <link href="assets/css/styles.css" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 
+        
+</head>
+
+<!-- 
+*** BODY ******************************************************  
+***************************************************************  
+-->
+<body class="p-3 pt-20 text-white bg-black debug-screens">
+
+<!-- 
+*** HEADER ****************************************************
+***************************************************************    
+-->
+<header class="fixed right-0 w-full p-5 -mt-20 text-right bg-red-400 ">
+    <div id="menu" x-data="{ openPanel: false }">  
+        <!-- Logo -->
+        <img src="./assets/img/logo-bossenz.png" class="absolute left-5 top-5 w-36" />
+        
+        <!-- open-Button -->
+        <button
+            id="btnOpen"
+            x-data 
+            @click="$store.navLayer.toggle()"
+            x-on:click="openPanel= true"
+            class="bg-blue-400 text-8xl">
+                       
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>    
+        </button>
+        
+        <!-- NAV-LAYER -->
+        <div 
+            id="navLayer"
+            x-show="openPanel, $store.navLayer.isShowing"            
+            class="fixed top-0 bottom-0 left-0 right-0 z-20 bg-purple-700 navLayer p-50"  
+            :class="{ 'visible': openPanel }, {'rotate-90': openPanel,' -translate-y-0.0': !openPanel }"
+            x-cloak 
+            x-data 
+            @click="$store.navLayer.toggle()"
+            x-collapse 
+            x-collapse.duration.500ms>
+    
+            <!-- Layer-Content -->   
+            <div 
+                id="navLayerContentWrapper"
+                class="grid w-full h-full p-0 border-green-600 justify-items-center md:flex"
+                x-data
+                @click="openPanel = false">
+                
+                <!-- Logo -->
+                <img id="logo" alt="Logo Angelika Bossenz Fotografie" src="./assets/img/logo-bossenz.png" class="absolute left-5 top-5 w-36" />
+                
+                <!-- close-Button -->
+                <button 
+                    id="btnClose"
+                    class="absolute z-50 bg-green-400 top-5 hover:cursor-pointer right-5" 
+                    x-data 
+                    x-on:click="openPanel= false" 
+                    x-on:click.prevent>
+                    
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>  
+                </button>   
+                
+                <!-- Navigation Links -->
+                <div id="anchorLinks" class="mt-32 text-3xl leading-relaxed text-left border-yellow-200 text-ueberschrift max-w-fit">
+                    <a href="#">People</a><br>
+                    <a href="#">Projekte</a><br>
+                    <a href="#">About</a><br>
+                    <a href="#footer" x-on:click="openPanel=false">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </div>      
+</header>    
+
+<!-- 
+*** MAIN ****************************************************** 
+***************************************************************  
+-->
+<main>
+    <!-- People -->
+    <section id="people" class="max-w-2xl px-6 py-16 mx-auto text-lg text-gray-600">
+        <h2 class="text-xl font-ueberschrift">Section 1 Page title</h2>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+    </section>
+    
+    <!-- Projekte -->
+    <section id="projects" class="bg-green-400 ">
+        Section 2
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="bg-green-400 ">
+        Section 2
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="bg-green-400 ">
+        Section 2
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+        <p class="mt-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.</p><p class="mt-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lorem in libero faucibus euismod nec in metus. Quisque at facilisis magna. Donec rhoncus bibendum tincidunt. Vestibulum non orci eget dolor eleifend mollis eu sit amet nunc. Cras malesuada sem nec malesuada cursus.
+        </p>
+    </section>
+    
+</main>
+
+<!-- 
+*** FOOTER **************************************************** 
+***************************************************************  
+-->
+
+<footer id="footer" class="bg-yellow-400 scroll-mt-32" x-ref="footer">
+    <!-- Logo -->
+    <img src="./assets/img/logo-bossenz.png" class="relative left-3 top-3 w-36" />
+    
+    <p class="mt-6">
+        Lorem ipsum dolor sit amet, <br>
+        consectetur adipiscing elit. <br>
+        Sed laoreet lorem in libero.
+    </p>
+</footer>
+
+<!-- 
+*** SCRIPTS *************************************************** 
+***************************************************************  
+--> 
+<!-- Alpine.js to prevent body-text from scrolling, if the menu panel is open -->
+<script id="rendered-js" >
+    document.addEventListener("alpine:init", () => {
+        Alpine.store("navLayer", {
+            isShowing: false,
+            lastScrollTopPosition: 0,
+            toggle() {
+    
+                if (!this.isShowing) {
+                    this.lastScrollTopPosition = window.scrollY;
+                    document.body.style.height = "100vh";
+                    document.body.style.overflowY = "hidden";
+                   
+                }
+                
+                this.isShowing = !this.isShowing;
+                
+                if (!this.isShowing) {
+                    document.body.style.height = "auto";
+                    document.body.style.overflowY = "visible";
+                    window.scrollTo(0, this.lastScrollTopPosition);
+                }
+            } 
+        });
+    });
+</script>
+</body>
+</html>
